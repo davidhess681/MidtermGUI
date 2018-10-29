@@ -22,13 +22,6 @@ namespace MidtermGUI
         }
 
         public static List<Book> Library = new List<Book>();
-
-        public static void PrintLibraryToListBox()
-        {
-            foreach(Book b in Library)
-            {
-                
-            }
-        }
+        
     }
 }
