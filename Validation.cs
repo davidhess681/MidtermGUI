@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MidtermGUI;
 
 namespace Midterm
 {
     class Validation
     {
         //validates the input so that it isnt null or a number
-        public static string IsInputValidAuthor(string info)
+        public static string IsInputValidAuthor()
         {
             while (true)
             {
+                string info = Console.ReadLine().ToLower();
                 if (string.IsNullOrEmpty(info) || info.Length > 35)//if null or too long, error
                 {
-                    Console.WriteLine("That is not correct input, try again");
-                    info = Console.ReadLine();
-
+                    Console.Write("That is not correct input, try again: ");
+                    continue;
                 }
                 else
                 {
@@ -30,34 +31,36 @@ namespace Midterm
                         else if (!char.IsLetter(item))//but any other special characters/numbers = error
                         {
                             Console.WriteLine("You must use alphabetical characters, try again ");
-                            info = Console.ReadLine();
+                            break;
                         }
                     }
                 }
                 return info;
             }
         }
-        public static string IsInputValidTitle(string info)//validates but allows for numbers and special characters
+        public static string IsInputValidTitle()//validates but allows for numbers and special characters
         {
             while (true)
             {
+                string info = Console.ReadLine().ToLower();
                 if (string.IsNullOrEmpty(info) || info.Length > 35)//if null or too long, error
                 {
-                    Console.WriteLine("That is not correct input, try again");
-                    info = Console.ReadLine();
+                    Console.Write("That is not correct input, try again: ");
+                    
                     continue;
                 }
                 return info;//allows for all numbers and special characters
             }
         }
-        public static string TitleCaseString(string sentence)
+        public static string TitleCaseString()
         {
             while (true)
             {
+                string sentence = Console.ReadLine();
                 if (sentence == null)
                 {
-                    Console.WriteLine("Error, please enter a sentence"); //if theres no input, returns nothing
-                    sentence = Console.ReadLine();
+                    Console.Write("Error, please enter a title: "); //if theres no input, returns nothing
+                    continue;
                 }
                 char firstChar;
                 string[] words = sentence.Split(' ');
@@ -78,32 +81,35 @@ namespace Midterm
         }
 
         //validates the user input as either y or n
-        public static bool YesOrNo(string response)
+        public static bool YesOrNo()
         {
             while (true)
             {
-                if (response == "y")
+                string response = Console.ReadLine().ToLower();
+                if (response == "y" || response == "yes")
                 {
                     return true;
                 }
-                else if (response == "n")
+                else if (response== "n" || response == "no")
                 {
                     return false;
                 }
                 else
                 {
-                    Console.Write("Invalid input, try (y/n): ");
-                    response = Console.ReadLine().ToLower();//changes variable and loops to top
+                    Console.Write("Invalid input, try with yes or no: ");
+                    continue;
+                    //loops to top
                 }
             }
         }
         //need to validiate user number from input menu in Libary Actions.
-        public static int SelectNum(string userNum)
+        public static int SelectNum()
         {
             bool temp;
             int numTemp;
             while (true)
             {
+                string userNum = Console.ReadLine();
                 if (temp = int.TryParse(userNum, out numTemp))
                 {
                     if (numTemp > 0 && numTemp <= 6)
@@ -112,24 +118,27 @@ namespace Midterm
                     }
                     else
                     {
-                        Console.Write("Invalid input, enter a number between 1 and 6.");
-                        userNum = Console.ReadLine();//changes variable and loops to top
+                        Console.Write("Invalid input, enter a number between 1 and 6: ");
+                        continue;
+                        //loops to top
                     }
                 }
                 else
                 {
-                    Console.Write("Invalid input, enter a number between 1 and 6.");
-                    userNum = Console.ReadLine();//changes variable and loops to top
+                    Console.Write("Invalid input, enter a number between 1 and 6: ");
+                    continue;
+                    //loops to top
                 }
             }
         }
         //need to validiate user number from input menu in Libary Actions.
-        public static int SelectNumBetween1And2(string userNum)
+        public static int SelectNumBetween1And2()
         {
             bool temp;
             int numTemp;
             while (true)
             {
+                string userNum = Console.ReadLine();
                 if (temp = int.TryParse(userNum, out numTemp))
                 {
                     if (numTemp > 0 && numTemp <= 2)
@@ -138,43 +147,42 @@ namespace Midterm
                     }
                     else
                     {
-                        Console.Write("Invalid input, enter a number between 1 and 2.");
-                        userNum = Console.ReadLine();//changes variable and loops to top
+                        Console.Write("Invalid input, enter a number between 1 and 2: ");
+                        continue;
                     }
                 }
                 else
                 {
-                    Console.Write("Invalid input, enter a number between 1 and 2.");
-                    userNum = Console.ReadLine();//changes variable and loops to top
+                    Console.Write("Invalid input, enter a number between 1 and 2: ");
+                    continue;
                 }
             }
         }
         //need to validiate user number from input menu in Search.
-        public static int SelectFromSearch(string userNum, int searchLength)
+        public static int SelectFromSearch(int searchLength)//removed string input parameter!!!
         {
             bool temp;
             int numTemp;
             while (true)
             {
+                string userNum = Console.ReadLine();
                 if (temp = int.TryParse(userNum, out numTemp))
                 {
 
                     if (numTemp - 1 >= 0 && numTemp <= searchLength)
                     {
                         return numTemp - 1;
-                        //break; //do we need the break or does the return break it.
                     }
                     else
                     {
                         Console.Write("\nInvalid input, enter a number between 1 and {0}: ", searchLength);
-                        userNum = Console.ReadLine();//changes variable and loops to top
-
+                        continue;
                     }
                 }
                 else
                 {
                     Console.Write("Invalid input, enter a number between 1 and {0}: ", searchLength);
-                    userNum = Console.ReadLine();//changes variable and loops to top
+                    continue;
                 }
             }
         }
