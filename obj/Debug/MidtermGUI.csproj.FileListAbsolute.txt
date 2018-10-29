@@ -1,0 +1,10 @@
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.csprojAssemblyReference.cache
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.Form1.resources
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.Properties.Resources.resources
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.csproj.GenerateResource.cache
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.csproj.CoreCompileInputs.cache
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\bin\Debug\MidtermGUI.exe.config
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\bin\Debug\MidtermGUI.exe
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\bin\Debug\MidtermGUI.pdb
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.exe
+C:\Users\David\source\repos\MidtermGUI\MidtermGUI\obj\Debug\MidtermGUI.pdb
